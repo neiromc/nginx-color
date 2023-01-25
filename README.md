@@ -1,9 +1,9 @@
 ## Start
 ```bash
-docker run -d -p 8888:80 -e COLOR=red -e BGCOLOR=yellow --name nginx nginx-color
+docker run -d -p 8888:80 -e COLOR=red -e BGCOLOR=yellow --name nginx neiromc/nginx-color:latest
 ```
 
-## Result
+## Resulst
 http://localhost:8888
 
 ## Stop
