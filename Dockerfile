@@ -1,7 +1,5 @@
 FROM nginx
 
-ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD html/index.html /usr/share/nginx/html/index.html
-
-RUN chmod ug+x /docker-entrypoint.sh
+ADD docker-entrypoint.d/90change-index-html.sh /docker-entrypoint.d/
 
