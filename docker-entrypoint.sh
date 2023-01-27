@@ -5,10 +5,13 @@ set -e
 
 COLOR=${COLOR:-black}
 BGCOLOR=${BGCOLOR:-white}
+CUSTOM_TEXT=${CUSTOM_TEXT:-no_custom_text}
 
 ### Change color
-sed -i -e "s/__PLACEHOLDER_COLOR__/$COLOR/g" /usr/share/nginx/html/index.html
-sed -i -e "s/__PLACEHOLDER_BGCOLOR__/$BGCOLOR/g" /usr/share/nginx/html/index.html
+INDEX_FILE=/usr/share/nginx/html/index.html
+sed -i -e "s/__PLACEHOLDER_COLOR__/$COLOR/g" $INDEX_FILE
+sed -i -e "s/__PLACEHOLDER_BGCOLOR__/$BGCOLOR/g" $INDEX_FILE
+sed -i -e "s/__PLACEHOLDER_CUSTOM_TEXT__/$CUSTOM_TEXT/g" $INDEX_FILE
 
 if [ -z "${NGINX_ENTRYPOINT_QUIET_LOGS:-}" ]; then
     exec 3>&1
